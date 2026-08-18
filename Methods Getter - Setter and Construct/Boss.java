@@ -46,7 +46,7 @@ public class Boss {
 		
 		for (int i = 0; i < 1; i++){
 			
-			dano = random.nextInt (200);
+			dano = random.nextInt (400);
 			
 		}
 		
