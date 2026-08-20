@@ -7,22 +7,18 @@ public class Bank {
 		BankAccount c1 = new BankAccount();
 		BankAccount c2 = new BankAccount();
 		BankAccount c3 = new BankAccount();
-		
+		BankAccount [] contas = new BankAccount[3];
+		contas[0] = c1;
+		contas[1] = c2;
+		contas[2] = c3;
 		c1.abrirConta("Carlos" , "Conta Corrente");
-		c1.contaStatus();
-		System.out.print("\n");
 		c2.abrirConta("Luis" , "Conta Salário");
-		c2.contaStatus();
-		System.out.print("\n");
 		c3.abrirConta("Caseiro" , "Conta Corrente");
-		c3.contaStatus();
-		c1.pagarMensal();
-		System.out.print("\n");
-		c1.contaStatus();
-	
-		
-		
+		for (int i = 0; i < contas.length; i++)
+		{
+			contas[i].contaStatus();
 
+		}
 		
 	}
 }

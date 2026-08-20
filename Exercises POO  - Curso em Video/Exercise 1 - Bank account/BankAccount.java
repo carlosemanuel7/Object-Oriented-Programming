@@ -98,6 +98,8 @@ public class BankAccount{
 		else 
 			System.out.println("Status da conta: fechada");
 
+
+		System.out.println("");
 		
 	}
 	
