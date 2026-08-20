@@ -3,61 +3,94 @@ import java.util.Scanner;
 
 public class BankAccount{
 	
-	
+	private static int cont = 0;
 	private int numConta = 0;
-	private int nextid = 1;
 	protected String tipo;
 	private String dono;
-	private int saldo;
+	private double saldo;
 	private boolean status;
 	Random random = new Random();
 	Scanner scan = new Scanner(System.in);
 	
-	public BankAccount(String t , String d){
+	public BankAccount(){
 		
-		this.numConta = nextid + 1;
-		this.tipo = t;
-		this.dono = d;
 		this.saldo = 0;
 		this.status = false;
 	}
 	
-	public void setNumConta(int n){
-		
-		this.numConta = n;
-		
-	}
 	public int getNumConta(){
 		
 		return this.numConta;
 		
 	}
-	public void setTipo(String t){
+	public void setTipo(String tipo){
 		
-		this.tipo = t;
+		if ("Conta Salário".equals(tipo)){
+			
+			this.tipo = "Conta Salário";
+		}
+		else
+			this.tipo = "Conta Corrente";
+		
 		
 	}
 	public String getTipo(){
 		
 		return this.tipo;
 		
-	}public void setDono(String t){
+	}
+	public void setDono(String dono){
 		
-		this.dono = t;
+		this.dono = dono;
 		
 	}
-	public String getDono(String d){
+	public String getDono(){
 		
 		return this.dono;
 		
 	}
 	
+	public void setSaldo(double saldo){
+		
+		this.saldo = saldo;
+		
+	}
+	public double getSaldo(){
+		
+		return this.saldo;
+	}
+	public void setStatus(boolean status){
+		
+		this.status = status;
+		
+	}
+	public boolean getStatus(){
+		
+		return this.status;
+		
+	}
+	public void abrirConta(String dono , String tipo){
+		
+		this.setDono(dono);
+		this.setTipo(tipo);
+		this.setStatus(true);
+		this.numConta = cont;
+		cont++;
+		
+		if ("Conta Salário".equals(this.tipo))
+		{
+			this.setSaldo(30);
+		}
+		else
+			this.setSaldo(50);
+	}
+	
 	public void contaStatus(){
 		
-		System.out.println("Bem vindo ao BB , Sr(a)" +this.dono);
-		System.out.println("Número da conta: " +this.numConta);
-		System.out.println("Saldo: R$" +this.saldo);
-		System.out.println("Tipo de conta:" +this.tipo);
+		System.out.println("Bem vindo ao BB , Sr(a)" +this.getDono());
+		System.out.println("Número da conta: " +this.getNumConta());
+		System.out.println("Saldo: R$" +this.getSaldo());
+		System.out.println("Tipo de conta: " +this.getTipo());
 		if (status == true)
 		{
 			System.out.println("Status da conta: aberta");
@@ -67,18 +100,6 @@ public class BankAccount{
 
 		
 	}
-	public void abrirConta(){
-		
-		
-		this.status = true;
-		
-		if (this.tipo == "cc")
-		{
-			this.saldo = 30;
-		}
-		else
-			this.saldo = 50;
-	}
 	
 	public void efetuarDeposito(){
 		
@@ -86,7 +107,7 @@ public class BankAccount{
 		System.out.println("Digite o valor que vc quer depositar");
 		n = scan.nextInt();
 		
-		this.saldo = this.saldo + n;
+		this.setSaldo(this.saldo + n);
 		
 		
 	}
@@ -96,9 +117,9 @@ public class BankAccount{
 		System.out.println("Digite o valor que vc quer sacar");
 		n = scan.nextInt();
 		
-		if (this.saldo >= n){
+		if (this.getSaldo() >= n){
 			
-			this.saldo = this.saldo - n;
+			this.setSaldo(this.saldo - n);
 			
 		}
 		else 
@@ -108,28 +129,27 @@ public class BankAccount{
 	
 	public void fecharConta(){
 		
-		if (this.saldo > 0)
+		if (this.getSaldo() > 0)
 		{
 			System.out.println("Não é possivel fechar uma conta com saldo,faça o saque!!");
 			
 		}
 		else
-			this.status = false;
+			this.setStatus(false);
 			
 	
 	}
 	public void pagarMensal(){
 		
-		if (this.tipo == "cs")
+		if (this.getTipo() == "Conta Salário")
 		{
-			this.saldo -= 20;
+			this.setSaldo(this.getSaldo() - 20);
 		}
 		
 		else
-			this.saldo -= 30;
+			this.setSaldo(this.getSaldo() - 30);
 
-	
-	
+
 	}
 	
 }

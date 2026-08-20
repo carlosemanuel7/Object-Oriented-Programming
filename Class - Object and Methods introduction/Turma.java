@@ -8,6 +8,8 @@ public class Turma {
 		
 		
 		a1.resultado();
+
+		
 	}
 }
 
