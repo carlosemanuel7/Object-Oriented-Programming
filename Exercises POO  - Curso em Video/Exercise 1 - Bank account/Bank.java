@@ -19,6 +19,11 @@ public class Bank {
 			contas[i].contaStatus();
 
 		}
+		c1.efetuarDeposito();
+		c1.contaStatus();
+		c1.efetuarSaque();
+		c1.fecharConta();
+		c1.contaStatus();
 		
 	}
 }
