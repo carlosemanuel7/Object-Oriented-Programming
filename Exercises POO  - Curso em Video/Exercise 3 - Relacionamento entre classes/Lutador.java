@@ -1,5 +1,5 @@
 
-public class Lutador   {
+public class Lutador implements Controlador   {
 	
 	private String nome;
 	private String nacionalidade;
