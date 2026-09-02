@@ -37,6 +37,7 @@ public class Pessoa {
 	}
 	public int getMesDeNascimento(){
 		
+		
 		return this.mesDeNascimento;
 	}
 	public void setMesDeNascimento(int mesDeNascimento){
@@ -53,28 +54,27 @@ public class Pessoa {
 	}
 	public int mostraIdade(){
 		
-		int i;
-		i = this.anoDeNascimento - 2018;
 		if(this.mesDeNascimento < 10 ){
 		
-			return i - 1;
+			return (2018 - this.anoDeNascimento);
 		}
 		else
-			return i;
+			return 2018 - this.anoDeNascimento - 1;
 	}
 	public int mostraIdade(int ano , int mes){
 		
-		if (ano > this.anoDeNascimento){
+		if (this.anoDeNascimento > ano){
 			
 			System.out.println("Inválido");
 			return 0;
 		}
 		else if(this.mesDeNascimento < mes){
 			
-			return anoDeNascimento - ano - 1;
+			return (ano - getAnoDeNascimento());
 		} 
 			
-		
+		else 
+			return (ano - getAnoDeNascimento()) - 1; 
 		
 		
 	}
