@@ -7,9 +7,9 @@ public class Funcionario {
 	
 	public Funcionario(String nome , double salarioBase , int tempoDeServido){
 		
-		this.setNome(nome);
-		this.setSalarioBase(salarioBase);
-		this.setTempoDeServido(tempoDeServido);
+		this.nome = nome;
+		this.salarioBase = salarioBase;
+		this.tempoDeServido = tempoDeServido;
 		
 	}
 	public String getNome(){

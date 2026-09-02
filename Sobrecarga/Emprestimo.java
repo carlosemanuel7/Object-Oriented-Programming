@@ -11,8 +11,8 @@ public class Emprestimo {
 	}
 	public Emprestimo(String nomeCliente , int renda){
 		
-		setNomeCliente(nomeCliente);
-		setRenda(renda);
+		nomeCliente = nomeCliente;
+		this.renda = renda;
 	}
 	
 	public String getNomeCliente(){
