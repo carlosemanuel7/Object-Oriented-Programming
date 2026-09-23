@@ -77,7 +77,6 @@ public class Transporte {
 				case 5: System.out.println("Programa Encerrando..."); 
 					break;
 				
-				
 			}
 	
 		} while (opt != 5);
