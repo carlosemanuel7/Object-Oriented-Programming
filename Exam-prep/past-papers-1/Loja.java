@@ -24,9 +24,10 @@ public class Loja {
 			if (opt >= 1 && opt <= 4)
 			{
 				System.out.println("Qual produto deseja manipular?");
-				System.out.println("1 - Milho");
-				System.out.println("2 - Açai");
-				System.out.println("3 - Massa pizza");
+				System.out.println("1 - " + p1.getNome());
+				System.out.println("2 - " + p2.getNome());
+				System.out.println("3 - " + p3.getNome());
+			
 				int indiceP = entrada.nextInt();
 				Produto produtoEscolhido = null;
 				entrada.nextLine();
