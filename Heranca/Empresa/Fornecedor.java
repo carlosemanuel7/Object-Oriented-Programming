@@ -30,5 +30,6 @@ public class Fornecedor extends Pessoa{
 		
 		return this.getCredito() - this.getDivida();
 	}
+	
 }
 
