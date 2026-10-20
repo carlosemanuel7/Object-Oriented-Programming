@@ -18,7 +18,4 @@ public class ContaPoupanca extends ContaBancaria{
 
         return this.getSaldo() + (this.getSaldo() * (taxa));
     }
-
-
-
 }
