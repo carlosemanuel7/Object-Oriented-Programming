@@ -16,7 +16,7 @@ public class ContaPoupanca extends ContaBancaria{
     
     public Double calcularNovoSaldo(Double taxa){
 
-        return this.getSaldo() + (this.getSaldo() * (taxa /100));
+        return this.getSaldo() + (this.getSaldo() * (taxa));
     }
 
 
