@@ -10,7 +10,7 @@ public class Pickup extends Carro {
 		this.capacidadeCarga = capacidadeCarga;
 		if (pesoCarga > capacidadeCarga)
 		{
-			this.pesoCarga = this.capacidadeCarga;
+			throw new IllegalArgumentException("Capacidade Máxima atingida");
 		}
 		else
 			this.pesoCarga = pesoCarga;
@@ -44,9 +44,9 @@ public class Pickup extends Carro {
 		return this.pesoCarga;
 	}
 	public void setPesoCarga(int pesoCarga){
-		if (pesoCarga > capacidadeCarga)
+		if (this.pesoCarga > this.capacidadeCarga)
 		{
-			this.pesoCarga = this.capacidadeCarga;
+			throw new IllegalArgumentException("Capacidade Maxima atingida");
 		}
 		else
 			this.pesoCarga = pesoCarga;
